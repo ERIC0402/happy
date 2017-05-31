@@ -14,13 +14,11 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
  * 作者：王政
  * 创建时间：2017年4月19日 下午5:12:52
  */
-@ControllerAdvice
 public class ExceptionController {
 
 	/**
 	 *异常处理
 	 */
-	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, String> ExceptionHandler(Exception exceededException)  {
 		Map<String, String> map = new HashMap<String, String>();

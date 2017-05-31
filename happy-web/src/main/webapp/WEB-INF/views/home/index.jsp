@@ -50,9 +50,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="row">
 					<div class="col-md-2 col-sm-6 col-md-offset-1">
 						<div class="gallery-item">
-								<img src="images/gallery/gallery-item1.jpg" alt="image 1">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item1.jpg" alt="image 1">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item1.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item1.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
 							<div class="content-gallery">
 								<h3>Etiam sed felis</h3>
@@ -63,9 +63,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item2.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item2.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item2.jpg" alt="image 2">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item2.jpg" alt="image 2">
 							</div>
 							<div class="content-gallery">
 								<h3>Nulla sagittis</h3>
@@ -76,9 +76,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item3.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item3.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item3.jpg" alt="image 3">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item3.jpg" alt="image 3">
 							</div>
 							<div class="content-gallery">
 								<h3>Quisque lacinia</h3>
@@ -89,9 +89,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item4.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item4.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item4.jpg" alt="image 4">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item4.jpg" alt="image 4">
 							</div>
 							<div class="content-gallery">
 								<h3>Venenatis</h3>
@@ -102,9 +102,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item5.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item5.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item5.jpg" alt="image 5">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item5.jpg" alt="image 5">
 							</div>
 							<div class="content-gallery">
 								<h3>Sed sed nisi</h3>
@@ -115,9 +115,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item6.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item6.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item6.jpg" alt="image 6">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item6.jpg" alt="image 6">
 							</div>
 							<div class="content-gallery">
 								<h3>Modern</h3>
@@ -128,9 +128,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item7.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item7.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item7.jpg" alt="image 7">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item7.jpg" alt="image 7">
 							</div>
 							<div class="content-gallery">
 								<h3>Elegant</h3>
@@ -141,9 +141,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item8.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item8.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item8.jpg" alt="image 8">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item8.jpg" alt="image 8">
 							</div>
 							<div class="content-gallery">
 								<h3>HTML5 CSS3</h3>
@@ -154,9 +154,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item9.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item9.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item9.jpg" alt="image 9">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item9.jpg" alt="image 9">
 							</div>
 							<div class="content-gallery">
 								<h3>New Design</h3>
@@ -167,9 +167,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item10.jpg" alt="image 10">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item10.jpg" alt="image 10">
 							</div>
 							<div class="content-gallery">
 								<h3>Download</h3>
@@ -180,9 +180,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item11.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item11.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item11.jpg" alt="image 11">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item11.jpg" alt="image 11">
 							</div>
 							<div class="content-gallery">
 								<h3>Responsive</h3>
@@ -193,9 +193,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="gallery-item">
 							<div class="image">
 								<div class="overlay">
-									<a href="images/gallery/gallery-item12.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+									<a href="<%=basePath %>static/home/images/gallery/gallery-item12.jpg" data-rel="lightbox" class="fa fa-expand"></a>
 								</div>
-								<img src="images/gallery/gallery-item12.jpg" alt="image 12">
+								<img src="<%=basePath %>static/home/images/gallery/gallery-item12.jpg" alt="image 12">
 							</div>
 							<div class="content-gallery">
 								<h3>Template</h3>
@@ -211,14 +211,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="row">
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product1.jpg" alt="product 1">
+								<img src="<%=basePath %>static/home/images/products/product1.jpg" alt="product 1">
 								<a href="#" class="product-title">Vestibulum ante ipsum primis</a>
 								<p>Nam pharetra, est non convallis congue, sem sem elementum nisl, eget vulputate nisl erat.</p>
 							</div> <!-- /.product-item -->
 						</div> <!-- /.col-md-4 -->
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product2.jpg" alt="product 2">
+								<img src="<%=basePath %>static/home/images/products/product2.jpg" alt="product 2">
 								<a href="#" class="product-title">Nunc pulvinar leo nec</a>
 								<p>Morbi nec mauris quis massa luctus consequat sit amet luctus metus. Etiam sollicitudin leo.</p>
 							</div> <!-- /.product-item -->
@@ -226,14 +226,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product3.jpg" alt="product 3">
+								<img src="<%=basePath %>static/home/images/products/product3.jpg" alt="product 3">
 								<a href="#" class="product-title">Curabitur mollis dignissim</a>
 								<p>Cras convallis erat vitae odio. Pellentesque rutrum nisl dui, dignissim accumsan nisl.</p>
 							</div> <!-- /.product-item -->
 						</div> <!-- /.col-md-4 -->
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product4.jpg" alt="product 4">
+								<img src="<%=basePath %>static/home/images/products/product4.jpg" alt="product 4">
 								<a href="http://www.cssmoban.com/" class="product-title" >Morbi venenatis nunc</a>
 								<p>Nulla vel est in sapien dictum vestibulum eu ac enim. Proin pharetra mi eget sem bibendum.</p>
 							</div> <!-- /.product-item -->
@@ -241,14 +241,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product5.jpg" alt="product 5">
+								<img src="<%=basePath %>static/home/images/products/product5.jpg" alt="product 5">
 								<a href="#" class="product-title">Phasellus id elementum</a>
 								<p>Etiam sed felis id eros imperdiet tempus. Mauris sit amet metus risus. Vestibulum mi velit.</p>
 							</div> <!-- /.product-item -->
 						</div> <!-- /.col-md-4 -->
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
-								<img src="images/products/product6.jpg" alt="product 6">
+								<img src="<%=basePath %>static/home/images/products/product6.jpg" alt="product 6">
 								<a href="http://www.cssmoban.com/page/6" class="product-title" >Donec ullamcorper</a>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, animi quia voluptatem.</p>
 							</div> <!-- /.product-item -->
