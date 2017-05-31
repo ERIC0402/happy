@@ -14,7 +14,7 @@
 <body>
 
 <script type="text/javascript">
-	self.location="<%=basePath%>/home/index";
+	self.location="home/index";
 </script>
 </body>
 </html>
