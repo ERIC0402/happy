@@ -61,6 +61,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
+			<<<<<<< HEAD
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
