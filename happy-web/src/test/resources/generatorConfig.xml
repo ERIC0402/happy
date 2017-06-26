@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- 配置Run As Maven build : Goals 参数 : mybatis-generator:generate -Dmybatis.generator.overwrite=true -->
+<!-- 配置 tableName,使用 Run As Maven build 生成 dao model 层 -->
+<generatorConfiguration>
+    <!-- 配置文件路径 -->
+    <properties url="${mybatis.generator.generatorConfig.properties}"/>
+
+    <!--配置该元素只需要注意如果JDBC驱动不在**classpath**下，就需要通过<classPathEntry>元素引入jar包，这里**推荐**将jar包放到**classpath**下 -->
+    <!-- <classPathEntry location="${drive.class.path}"/> -->
+
+	<!-- MyBatis3Simple：不生成Example内容 -->
+    <context id="DB2Tables" targetRuntime="MyBatis3Simple">
+    	
+    	<!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        
+        <!-- 增加Models ToStirng方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        
+        <!-- 增加爱Models Serializable实现 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    	
+        <!--关闭注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!--数据库连接信息 -->
+        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}" />
+
+        <!--生成的model 包路径 -->
+        <javaModelGenerator targetPackage="${model.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="ture"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--生成xml mapper文件 路径 -->
+        <sqlMapGenerator targetPackage="${xml.mapper.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="ture"/>
+        </sqlMapGenerator>
+
+        <!-- 生成的Dao接口 的包路径 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${dao.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="ture"/>
+        </javaClientGenerator>
+
+        <!--
+        	该元素至少要配置一个，可以配置多个
+        	tableName：必选 指定要生成的表名，可以使用SQL通配符匹配多个表。例如要生成全部的表，可以按如下配置：<table tableName="%" />
+        -->
+        <table tableName="%" />
+    </context>
+</generatorConfiguration>
