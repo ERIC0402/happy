@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <base href="<%=basePath %>" /> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>管理</title> 
+  <title>吴暮霞我喜欢你</title> 
   <link href="<%=basePath %>static/upload/script/style.css" rel="stylesheet" type="text/css" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" /> 
@@ -298,6 +298,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </ul> 
   </article> 
   </form>
+  <div style='display:none;width:100%; margin:0 auto;position:fixed;left:0;top:0;bottom: 0;z-index: 111;opacity: 0.5;background: black;color:#fff;' id='loading'>
+	  <a class='mui-active' style='left: 50%;position: absolute;top:50%'>
+		  <span class='mui-spinner'>
+		  	<img src = "<%=basePath %>static/upload/script/d.gif" />
+		  </span>
+		  <p style='margin-left: -10px;'>上传中...</p>
+	  </a>
+  </div>
   <article class="btn-1"> 
    <button onclick="return check();">上传照片</button> 
   </article> 
@@ -328,6 +336,9 @@ $("#file0").change(function(){
 			data : form,
 			processData:false,
 	        contentType:false,
+	        beforeSend: function() {
+	        	$("#loading").show();
+	        },
 			error: function(request) {
 	            alert("上传失败！" + request);
 	        },
@@ -337,12 +348,16 @@ $("#file0").change(function(){
 					$(".file-3").parents(".uploader").find(".filename").val(data.fileName);
 					$("#filepath").val(data.filePath);
 				}
-			}
+			},
+	        complete : function() {
+	        	$("#loading").hide();
+	        }
 		})
 	}
 	/* obUrl = getObjectURL(this.files[0]) ;
 	console.log("obUrl = "+obUrl) ; */
 }) ;
+
 function getObjectURL(file) {
 	var url = null ;
 	if (window.createObjectURL!=undefined) { // basic
