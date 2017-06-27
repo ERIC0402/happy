@@ -276,7 +276,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="uploader blue"> 
      <input type="text" name = "fileName" class="filename" readonly="" /> 
      <input type="hidden" id = "filepath" name = "filePath" readonly="" /> 
-     <a class="license"> <img id="img-1" src="<%=basePath %>static/upload/script/logo_n.png" /> </a> 
+     <a class="license"> <img id="img-1" src="<%=basePath %>static/upload/script/photo.png" /> </a> 
 	<input id="file0" name="file" class="file-3" type="file" size="30" accept="image/*" capture="camera" /> 
     </div> 
    </div> 
@@ -320,26 +320,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  return true;
   }
 $("#file0").change(function(){
-	$(".file-3").parents(".uploader").find(".filename").val("");
-	$("#filepath").val("");
-	var form = new FormData(document.getElementById("serForm"));
-	$.ajax({
-		url : '<%=basePath%>file/upload',
-		type:"post",
-		data : form,
-		processData:false,
-        contentType:false,
-		error: function(request) {
-            alert("上传失败！");
-        },
-		success : function(data) {
-			if(data.success) {
-				$("#img-1").attr("src", "<%=basePath%>file/download?filePath=" + data.filePath + "&fileName=" + data.fileName);
-				$(".file-3").parents(".uploader").find(".filename").val(data.fileName);
-				$("#filepath").val(data.filePath);
+	if($(this).val()) {
+		var form = new FormData(document.getElementById("serForm"));
+		$.ajax({
+			url : '<%=basePath%>file/upload',
+			type:"post",
+			data : form,
+			processData:false,
+	        contentType:false,
+			error: function(request) {
+	            alert("上传失败！" + request);
+	        },
+			success : function(data) {
+				if(data.success) {
+					$("#img-1").attr("src", "<%=basePath%>file/download?filePath=" + data.filePath + "&fileName=" + data.fileName);
+					$(".file-3").parents(".uploader").find(".filename").val(data.fileName);
+					$("#filepath").val(data.filePath);
+				}
 			}
-		}
-	})
+		})
+	}
 	/* obUrl = getObjectURL(this.files[0]) ;
 	console.log("obUrl = "+obUrl) ; */
 }) ;
