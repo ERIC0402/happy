@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <base href="<%=basePath %>" /> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>HTML5手机移动端上传头像裁剪图片代码</title> 
+  <title>管理</title> 
   <link href="<%=basePath %>static/upload/script/style.css" rel="stylesheet" type="text/css" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" /> 
@@ -192,7 +192,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         }
         .mui-bar-tab .aui-tab-item .mui-icon~.mui-tab-label {
             font-size: 12px;
-            display: block;
             overflow: hidden;
             text-overflow: ellipsis;
 
@@ -217,7 +216,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         }
 
         .mui-icon-extra-people{
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAHKElEQVR4Xu2c7ZHcNgyGoQpiVxC7gpwrsF2B4wpiVxCkgpwrWLiCnCvIuYKsK4hdQc4V5FyBMq+HO6PZECQoEdDunjizcz9OH+Qj6AVIAhpoayEEhpC7bDehDXSQEWygN9BBBIJuc9IWzcyPhmF4Po7jFRE9Sb8pms9EdD8Mw363230KYjbrNicHmpkB9FciekFEANzS9sMw3Izj+FFE7ltO9D72ZEAzM8D+ngD3GPcNEb0TkbseF1t6jdVBJwveEdHPSwejnH9NRO/XtvBVQTPzGyIC5EdOkA+XhVW/FhFo+iptNdDM/AcRAXRkeysikJTwFg4akQQR/WnU4m9EtCeiWyL6rrUisk/XODhK/MUD+8lCbxgG3u127y3H9jxmDdB/GSAjVBMRAWBTS/Ch80JEP1ROCrfsUNAGufhKRNdLXu8EnIkIvxLwUNshowoJkZA4fj09oHwOkVHTAzJAV6rEkK4uyXUQ4yBHQK4f4pQEa8izCsa0vWDfl5rlz4s4g863pT5WJRoEu67AJ5Ol5mhkPVYP8GZ+AN2x10mvEBdK59EBH3EC9ZNmLoHzOdgIQ87SVZ2gOLAK1ZMxzflfcADwNPmv23AsL9rXIFXRkcHBFe6bDGzHCOv+SsWkQee3bEGzS0Dytxx+2TiGARKbQlCcHEJxf2YYpujttbO+4NGpEGlj2PW7g1TyREe/iu/sINdEE2vomI9yKSanCFft2JyNNWS7Ue7wlam6C4Wo5l4MwM+chFIIg+XNavPUFjAoKF/OPmqoVG0JpTdJM0T9DaJMFtMBbIOIaZNSNwm7ysAfpxVOysgU8bDlgPP25u8XQ4aBFxu2eDRSO0zM1WN9BWiJbjCssClwOaiE5BOrSI6KJAn7IzPEvQW3g30TE3x8TM2L/DJuxxO4UJy79KioObrHmCxlZSblny3nulrOQQC47wq4jk1mUs/rV6jBvoNDHQprqrzQ6ZWVtUQjYTnKRL8watDWovIi9dRlS4aGXv8pnnRq03aLyK2qZs6HZ/esO0NQ5X2cC9XUGnwWEx/VXG0CArsKKQ9NrKbo/7Q48ArU13wT5EQpJkwDHn1sFD1sfdQVesGv92dUJp+wrrGlpSu7s1h0showAg1L0vbqcMiNiLzt7RwNkMP2LkMsOsFG/kZuafLAF3kXmJ530eykybBkbdsMmapId3DZUTk2mjDQCbY2LT/0C4U/10vSapMVI8evlpgTuuYSCroSYk2N4A7Ax3HEq22yuGTBiG4w6aht/obo8nRA4aAbYE8l5XYYBgA/hn41jiNidayrWKfP4ZDDnGHOyRX27Xr7xMP1oMlvPJNkSh1fxaIPHUoLPJjQ1DL0l8L/Aqu3ytDSm+XOXwV0qoh9NY4j9LS1aHMuB8jPzW63+zj3AkvOCwWdZmjI9YCm1hzWknGVzoWjlXEcsS7eJZS0dDQEdEPIZelzr2MAGTno73pdcFWNZmZYsCXkyvUTDuxQshown4e5AaJOhMC/G1jP4aR0QySJxxyyR1jTpSXIuZYIsGw2kBIH6oLzHF0BPninvshow4Us/HL5dRp4gEbo5yInLtKRrNha/IPMf2wQ3LaCrZlqetiYIeJniWwAGbs/3RPku4JurIpF0SZqCrsPSonbARsP32Ll6FdX7e4GukEqABgThyZZqFmv9f9pdx5vUA04dmOg3V2kpAtow0oZOEAiADjEgmvg08y0Vl3bbUVxMWgjZBS543XsYh01iNb/p7gelluKWLrAXgTaABnhGaa+J2HF2gMwrLsshj0bdHJ82OHWZngI1SAVq32MxGrZOC5pN6xbi04QFb1uueb02FmgDVtEgPzi1KSiBim9oXj7NNizt9zmgi59PeYsIR9NekqwZ61nN4MulCWgr2cN2Qh71ucnmkBX8iNCa7trMrD0/5WPBTR/fqIVtFZAj+gCmnwWjs/6ECofc2mq4DKDLuQ7o9+zdMs64DWPY2Ytpa3p8xMtoLW6bnye0uvjgGsy/n7vyrc+zEn1JtCFVwiS8eTcwrjWp1d5m01lzVbQmjU36VTrAE/p+MLngkxWXQVdCOfcc4pPDHQp17tq1RbQSHfN7ZJcrAMsrIloiezVjNgi6ELy9oOy5slERrPq6rc+aqC1GpQHo83H1l3Q6mIBVA205gTd6vFOSZdzfSn4rKJTVEEXZOOi42bLg2ZmTFaOV/iK9ZMl0Fph+oNzghn50JyiWkJXAq19QebBysbEKWrVC6rvKoHO1Ut/EZGWhBjLm3h2xxQKQ1VZzYIuXMg0Czo7cjM6rHxpTA3zNNBabaAMw+CaozZjzKucMo4jQt//vd3ap4w00LWinlUGdyY3zTrEDXT/p5et9tJAa+FL/25d3hWbQJe+IH55aPqOqAn0ptHz4KvhryYdyD5CUL5Wncm8Ya57FrJjkc2UzS+srkev2/fLufsGOuhZbqA30EEEgm6zWXQQ6P8AStEPiCth28wAAAAASUVORK5CYII=');
+            background-image: url('data:image/png;base64,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');
             background-size:19px;
             background-repeat:no-repeat;
         }
@@ -290,17 +289,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <ul> 
     <li> 
      <div class="left">
-       商家描述: 
+       照片描述: 
      </div> 
      <div class="right"> 
-      <input name = "desc" placeholder="例:素材火是一家网站素材收集站" style = "width: 100%"/> 
+      <input id = "desc" name = "desc" placeholder="例:吴暮霞我喜欢你" style = "width: 100%"/> 
      </div> 
      <div class="clear"></div> </li> 
    </ul> 
   </article> 
   </form>
   <article class="btn-1"> 
-   <button onclick="$('#serForm').submit()">上传照片</button> 
+   <button onclick="return check();">上传照片</button> 
   </article> 
   <script src="<%=basePath %>static/upload/script/jquery.min.js" type="text/javascript"></script> 
   <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script> 
@@ -308,6 +307,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <script src="<%=basePath %>static/upload/script/hammer.js"></script> 
   <script src="<%=basePath %>static/upload/script/jquery.photoClip.js"></script> 
   <script>
+  function check() {
+	  if(!$("#filepath").val()) {
+		  alert("请上传文件");
+		  return false;
+	  }
+	  if(!$("#desc").val()) {
+		  alert("请填写照片描述");
+		  return false;
+	  }
+	  $("#serForm").submit();
+	  return true;
+  }
 $("#file0").change(function(){
 	var form = new FormData(document.getElementById("serForm"));
 	$.ajax({
@@ -350,13 +361,10 @@ $(function (){
 });
 
 </script> 
-  <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"> 
-   <p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p> 
-  </div> 
   <nav class="mui-bar mui-bar-tab"> 
    <div class="t-line"> 
-    <a href="home/index" class="aui-tab-item mui-active"> <span class="mui-icon mui-icon-home"></span> </a>
-    <a href="manager/photo" class="aui-tab-item"> <span class="mui-icon mui-icon-extra mui-icon-extra-people"></span> </a> 
+    <a href="home/index" class="aui-tab-item"> <span class="mui-icon mui-icon-home"></span> <span class="mui-tab-label">show</span></a>
+    <a href="manager/photo" class="aui-tab-item mui-active"> <span class="mui-icon mui-icon-extra mui-icon-extra-people"></span> <span class="mui-tab-label">管理</span> </a> 
    </div> 
   </nav> 
  </body>

@@ -27,7 +27,7 @@
 	<context:component-scan base-package="party.wzlovewmx.controller, party.wzlovewmx.service"></context:component-scan>
 
 	<!-- 引入配置文件 -->
-	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyConfigurer" class="party.wzlovewmx.prop.CustomizedPlaceHolder">
 		<!-- 可以从jvm虚拟机的参数中获得配置信息 -->
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 		<property name="ignoreResourceNotFound" value="true" />

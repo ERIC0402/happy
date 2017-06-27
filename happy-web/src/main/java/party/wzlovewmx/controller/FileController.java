@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import party.wzlovewmx.prop.CustomizedPlaceHolder;
+
 /**
  * 管理
  * 
@@ -35,7 +37,11 @@ public class FileController {
 	public Map<String, Object> upload(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 创建你要保存的文件的路径
-		String path = saveFile(file, request.getSession().getServletContext().getRealPath("upload").replace("\\", "/"));
+		String path = CustomizedPlaceHolder.getProperty("photo.path");
+		if(StringUtils.isEmpty(path)) {
+			path = request.getSession().getServletContext().getRealPath("upload").replace("\\", "/");
+		}
+		path = saveFile(file, path);
 		if(StringUtils.isEmpty(path)) {
 			map.put("message", file.getOriginalFilename() + "上传失败！");
 			map.put("success", false);
@@ -52,7 +58,10 @@ public class FileController {
 	public Map<String, Object> uploads(@RequestParam("file") CommonsMultipartFile[] files, HttpServletRequest request, ModelMap model) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 创建你要保存的文件的路径
-		String path = request.getSession().getServletContext().getRealPath("upload");
+		String path = CustomizedPlaceHolder.getProperty("photo.path");
+		if(StringUtils.isEmpty(path)) {
+			path = request.getSession().getServletContext().getRealPath("upload").replace("\\", "/");
+		}
 		StringBuilder sb = new StringBuilder();
 		boolean isSuccess = true;
 		for(CommonsMultipartFile file : files) {
