@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
@@ -31,6 +33,8 @@ import party.wzlovewmx.prop.CustomizedPlaceHolder;
 @Controller
 @RequestMapping("/file")
 public class FileController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
 	@RequestMapping("upload")
 	@ResponseBody
@@ -42,6 +46,7 @@ public class FileController {
 			path = request.getSession().getServletContext().getRealPath("upload").replace("\\", "/");
 		}
 		path = saveFile(file, path);
+		logger.info(path);
 		if(StringUtils.isEmpty(path)) {
 			map.put("message", file.getOriginalFilename() + "上传失败！");
 			map.put("success", false);
