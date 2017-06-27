@@ -320,6 +320,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  return true;
   }
 $("#file0").change(function(){
+	$(".file-3").parents(".uploader").find(".filename").val("");
+	$("#filepath").val("");
 	var form = new FormData(document.getElementById("serForm"));
 	$.ajax({
 		url : '<%=basePath%>file/upload',
