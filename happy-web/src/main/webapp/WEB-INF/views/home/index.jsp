@@ -275,7 +275,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div class="swiper-wrapper">
     
     <c:forEach items="${photos }" var="photo">
-    	<div class="swiper-slide" style="background-image: url('<%=basePath%>file/download?filePath=${photo.filepath }&quality=0.5&fileName=${photo.filename }');"> 
+    	<div class="swiper-slide" style="background-image: url('<%=basePath%>file/download?filePath=${photo.filepath }&quality=0.2&fileName=${photo.filename }');"> 
 	     	<a href="#" onclick="return false;"> <h1>${photo.description }</h1> </a> 
 	    </div> 
     </c:forEach>

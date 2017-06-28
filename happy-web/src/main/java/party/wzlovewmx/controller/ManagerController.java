@@ -1,5 +1,7 @@
 package party.wzlovewmx.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,16 @@ public class ManagerController {
 	@RequestMapping("upload")
 	public void upload() {
 		System.out.println("upload");
+	}
+	
+	@RequestMapping("remove")
+	public String remove() {
+		System.out.println("remove");
+		List<Photo> photos = photoService.queryAll();
+		for(Photo photo : photos) {
+			photoService.deleteByWhere(photo);
+		}
+		return "redirect:/home/index";
 	}
 	
 	@RequestMapping("save")
