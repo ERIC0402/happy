@@ -82,7 +82,7 @@ public class FileController {
 	}
 	
 	@RequestMapping("download")
-    public void download(HttpServletRequest request, HttpServletResponse res, @RequestParam(required = false, name = "scale") Double scale, @RequestParam(required = false, value = "size") String size) {
+    public void download(HttpServletRequest request, HttpServletResponse res, @RequestParam(required = false, name = "scale") Double scale, @RequestParam(required = false, name = "quality") Double quality, @RequestParam(required = false, name = "size") String size) {
 		String fileName = request.getParameter("fileName");
 		String filePath = request.getParameter("filePath");
         OutputStream os = null;
@@ -94,14 +94,19 @@ public class FileController {
             Builder<File> file = Thumbnails.of(filePath);
             if(scale != null) {
             	file.scale(scale);
-            }else {
+            }else if(size == null){
             	file.scale(1);
+            }
+            if(quality != null) {
+            	file.outputQuality(quality);
             }
             if(!StringUtils.isEmpty(size)) {
             	String[] sizes = size.split(",");
             	if(sizes.length == 2) {
             		//按指定大小把图片进行缩和放（会遵循原图高宽比例）
-            		file.size(Integer.parseInt(sizes[0]), Integer.parseInt(sizes[1]));
+            		int width = Integer.parseInt(sizes[0]);
+            		int height = Integer.parseInt(sizes[1]);
+            		file.size(width, height);
             	}
             }
             file.toOutputStream(os);

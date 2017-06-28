@@ -321,8 +321,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  return false;
 	  }
 	  if(!$("#desc").val()) {
-		  alert("请填写照片描述");
-		  return false;
+		  $("#desc").val("吴暮霞我喜欢你");
 	  }
 	  $("#serForm").submit();
 	  return true;
@@ -344,7 +343,7 @@ $("#file0").change(function(){
 	        },
 			success : function(data) {
 				if(data.success) {
-					$("#img-1").attr("src", "<%=basePath%>file/download?filePath=" + data.filePath + "&fileName=" + data.fileName);
+					$("#img-1").attr("src", "<%=basePath%>file/download?quality=0.2&filePath=" + data.filePath + "&fileName=" + data.fileName);
 					$(".file-3").parents(".uploader").find(".filename").val(data.fileName);
 					$("#filepath").val(data.filePath);
 				}
