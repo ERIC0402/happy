@@ -343,7 +343,7 @@ $("#file0").change(function(){
 	        },
 			success : function(data) {
 				if(data.success) {
-					$("#img-1").attr("src", "<%=basePath%>file/download?quality=0.2&filePath=" + data.filePath + "&fileName=" + data.fileName);
+					$("#img-1").attr("src", "<%=basePath%>file/download?quality=0.1&filePath=" + data.filePath + "&fileName=" + data.fileName);
 					$(".file-3").parents(".uploader").find(".filename").val(data.fileName);
 					$("#filepath").val(data.filePath);
 				}
