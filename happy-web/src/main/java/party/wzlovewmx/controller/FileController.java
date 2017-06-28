@@ -10,7 +10,6 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.Thumbnails.Builder;
 import party.wzlovewmx.prop.CustomizedPlaceHolder;
 
 /**
@@ -81,19 +82,39 @@ public class FileController {
 	}
 	
 	@RequestMapping("download")
-    public void download(HttpServletRequest request, HttpServletResponse res) throws IOException {
+    public void download(HttpServletRequest request, HttpServletResponse res, @RequestParam(required = false, name = "scale") Double scale, @RequestParam(required = false, value = "size") String size) {
 		String fileName = request.getParameter("fileName");
 		String filePath = request.getParameter("filePath");
-        OutputStream os = res.getOutputStream();
+        OutputStream os = null;
         try {
+        	os = res.getOutputStream();
             res.reset();
             res.setHeader("Content-Disposition", "attachment; filename=" + fileName);
             res.setContentType("application/octet-stream; charset=utf-8");
-            os.write(FileUtils.readFileToByteArray(new File(filePath)));
+            Builder<File> file = Thumbnails.of(filePath);
+            if(scale != null) {
+            	file.scale(scale);
+            }else {
+            	file.scale(1);
+            }
+            if(!StringUtils.isEmpty(size)) {
+            	String[] sizes = size.split(",");
+            	if(sizes.length == 2) {
+            		//按指定大小把图片进行缩和放（会遵循原图高宽比例）
+            		file.size(Integer.parseInt(sizes[0]), Integer.parseInt(sizes[1]));
+            	}
+            }
+            file.toOutputStream(os);
             os.flush();
+        } catch (IOException e) {
+			e.printStackTrace();
         } finally {
             if (os != null) {
-                os.close();
+                try {
+					os.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
             }
         }
     }
