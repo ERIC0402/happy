@@ -24,7 +24,7 @@
 	
 	">
 	
-	<context:component-scan base-package="party.wzlovewmx.controller, party.wzlovewmx.service"></context:component-scan>
+	<context:component-scan base-package="party.wzlovewmx.controller, party.wzlovewmx.service, party.wzlovewmx.security"></context:component-scan>
 
 	<!-- 引入配置文件 -->
 	<bean id="propertyConfigurer" class="party.wzlovewmx.prop.CustomizedPlaceHolder">
@@ -39,5 +39,7 @@
 	</bean>
 	
 	<import resource="classpath:spring/applicationContext-mybatis.xml"/>
+	
+	<import resource="classpath:spring/applicationContext-shiro.xml"/>
 	
 </beans>

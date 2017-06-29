@@ -276,7 +276,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="uploader blue"> 
      <input type="text" name = "fileName" class="filename" readonly="" /> 
      <input type="hidden" id = "filepath" name = "filePath" readonly="" /> 
-     <a class="license"> <img id="img-1" src="<%=basePath %>static/upload/script/photo.png" /> </a> 
+     <a class="license"> <img id="img-1" src="<%=basePath %>static/upload/script/dd.png" /> </a> 
 	<input id="file0" name="file" class="file-3" type="file" size="30" accept="image/*" capture="camera" /> 
     </div> 
    </div> 
@@ -309,11 +309,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <article class="btn-1"> 
    <button onclick="return check();">上传照片</button> 
   </article> 
-  <script src="<%=basePath %>static/upload/script/jquery.min.js" type="text/javascript"></script> 
-  <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script> 
-  <script src="<%=basePath %>static/upload/script/iscroll-zoom.js"></script> 
-  <script src="<%=basePath %>static/upload/script/hammer.js"></script> 
-  <script src="<%=basePath %>static/upload/script/jquery.photoClip.js"></script> 
+  <script src="<%=basePath %>static/upload/script/jquery.min.js" type="text/javascript"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+  <script src="<%=basePath %>static/upload/script/iscroll-zoom.js"></script>
+  <script src="<%=basePath %>static/upload/script/hammer.js"></script>
+  <script src="<%=basePath %>static/upload/script/jquery.photoClip.js"></script>
   <script>
   function check() {
 	  if(!$("#filepath").val()) {

@@ -34,5 +34,10 @@ public class HomeController {
 	public void manager() {
 		System.out.println("manager");
 	}
+	
+	@RequestMapping("login")
+	public void login(ModelMap modelMap) {
+		System.out.println("login");
+	}
 
 }
