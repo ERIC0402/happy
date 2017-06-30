@@ -18,8 +18,10 @@
                 /static/** = anon
 				<!-- 请求 logout.action地址，shiro去清除session -->
 				/logout = logout
+				<!-- 登录页 -->
+				/home/login = authc
                 <!-- 其他资源需要认证 -->
-                /** = authc
+                /** = user
             </value>
         </property>
     </bean>
